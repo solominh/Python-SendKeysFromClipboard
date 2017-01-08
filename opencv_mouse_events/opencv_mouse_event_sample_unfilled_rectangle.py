@@ -22,7 +22,12 @@ def draw_rect(event, x, y, flags, param):
 
 canvas = np.zeros((512, 512, 3), np.uint8)
 img = canvas.copy()
-cv2.namedWindow('image')
+
+# Set window => fullscreen or not
+# cv2.namedWindow('image')
+cv2.namedWindow("image", cv2.WND_PROP_FULLSCREEN)
+cv2.setWindowProperty("image", cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN)
+
 cv2.setMouseCallback('image', draw_rect)
 while(1):
     cv2.imshow('image', img)
