@@ -1,4 +1,5 @@
-import pyautogui
+# import pyautogui
+import keyboard
 import win32clipboard
 
 
@@ -11,7 +12,8 @@ def read_clipboard():
 
 
 def send_keys(data):
-    pyautogui.typewrite(data.strip())
+    keyboard.write(data.strip())
+    # pyautogui.typewrite(data.strip())
 
 
 def main():
