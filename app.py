@@ -1,26 +1,6 @@
-import pyautogui
-import win32clipboard
 import keyboard
 import datetime
-
-
-def read_clipboard():
-    win32clipboard.OpenClipboard()
-    data = win32clipboard.GetClipboardData()
-    win32clipboard.CloseClipboard()
-    print(data)
-    return data
-
-
-def send_keys(data):
-    pyautogui.typewrite(data.strip())
-
-
-def main():
-    global hotkey
-    data = read_clipboard()
-    send_keys(data)
-    print('Send keys successfully!')
+from send_clipboard_keys import main
 
 last_time_pressed = datetime.datetime.now()
 
